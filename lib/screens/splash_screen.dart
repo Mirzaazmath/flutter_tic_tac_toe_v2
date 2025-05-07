@@ -12,8 +12,17 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return BackgroundWidget(
-      child: Center(
-        child: Image.asset(Assets.logo),
+      child: Stack(
+        children: [
+          Align(
+            alignment: Alignment(-0.2, -0.4),
+            child: Image.asset(Assets.logo),
+          ),
+          Align(
+            alignment: Alignment(0, 0.6),
+            child: Text("Loading...",style: TextStyle(color: Colors.white38,fontSize: 30),)
+          ),
+        ],
       ),
     );
   }
