@@ -1,34 +1,56 @@
 import 'package:flutter/material.dart';
 import 'package:nice_buttons/nice_buttons.dart';
+
+
 class CustomButton extends StatelessWidget {
   final String title;
-  const CustomButton({super.key,required this.title});
+  final ButtonStyleType buttonStyleType;
+  final Function() onTap;
+
+  const CustomButton(
+      {super.key,
+        required this.title,
+        required this.buttonStyleType,
+        required this.onTap});
+
+  bool get isButtonStyleTypeAsPurple =>
+      buttonStyleType == ButtonStyleType.purple;
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
     return Container(
-      width: 200,
-      padding: EdgeInsets.all(3),
+      padding: const EdgeInsets.all(3),
       decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(32),
-      ),
-      alignment: Alignment.center,
+          color: Colors.white, borderRadius: BorderRadius.circular(32)),
       child: NiceButtons(
-        startColor: Color(0xffb85fff),
-        endColor:Color(0xffab50f4),
-        borderColor: Color(0xff9023e8),
+        gradientOrientation: GradientOrientation.Horizontal,
+        startColor: isButtonStyleTypeAsPurple
+            ? const Color(0xFFB85FFF)
+            : const Color(0xFFA6F208),
+        endColor: isButtonStyleTypeAsPurple
+            ? const Color(0xFFAB50F4)
+            : const Color(0xFF67EB00),
+        borderColor: isButtonStyleTypeAsPurple
+            ? const Color(0xFF9023E8)
+            : const Color(0xFF4EC307),
         borderRadius: 32,
         stretch: false,
-        gradientOrientation: GradientOrientation.Horizontal,
         onTap: (finish) {
-          print('On tap called');
+          onTap.call();
         },
-        child: Text(
-          title,
-          style: TextStyle(color: Colors.white, fontSize: 28),
+        child: Center(
+          child: Text(
+            title,
+            style: textTheme.headlineMedium?.copyWith(
+                color: Colors.white,
+                shadows: [
+                  const BoxShadow(color: Colors.black38, blurRadius: 8)
+                ]),
+          ),
         ),
       ),
     );
   }
 }
+enum ButtonStyleType {green, purple}

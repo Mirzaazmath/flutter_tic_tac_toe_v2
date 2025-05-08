@@ -39,7 +39,7 @@ class _UserNameScreenState extends State<UserNameScreen> {
                   ),
                 ),
               )),
-          CustomButton(title: "Continue"),
+          CustomButton(title: "Continue", buttonStyleType: ButtonStyleType.purple, onTap: () {  },),
           SizedBox(height: 50,)
         ]),
       ),
