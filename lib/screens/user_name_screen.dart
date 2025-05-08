@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tic_tac_toe/widgets/background_widget.dart';
+import 'package:flutter_tic_tac_toe/widgets/custom_button.dart';
 import 'package:flutter_tic_tac_toe/widgets/custom_chip_widget.dart';
 
 class UserNameScreen extends StatelessWidget {
@@ -11,6 +12,11 @@ class UserNameScreen extends StatelessWidget {
       child: SafeArea(
         child: Column(children: [
           CustomChipWidget(title: "Enter Player Name"),
+          Expanded(
+
+            flex: 3,
+              child: SizedBox()),
+          CustomButton(title: "Continue")
         ]),
       ),
 
