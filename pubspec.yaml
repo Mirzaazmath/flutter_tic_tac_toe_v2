@@ -36,6 +36,8 @@ dependencies:
   cupertino_icons: ^1.0.8
   # For Custom Button
   nice_buttons: ^0.0.3
+  # For Scan Animation
+  device_scan_animation: ^0.0.6
 
 dev_dependencies:
   flutter_test:

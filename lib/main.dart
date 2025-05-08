@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tic_tac_toe/screens/home_screen.dart';
+import 'package:flutter_tic_tac_toe/screens/scan_player_screen.dart';
 import 'package:flutter_tic_tac_toe/screens/splash_screen.dart';
 import 'package:flutter_tic_tac_toe/screens/user_name_screen.dart';
 void main(){
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Digitalt'
       ),
-      home: HomeScreen(),
+      home: ScanPlayerScreen(),
     );
   }
 }

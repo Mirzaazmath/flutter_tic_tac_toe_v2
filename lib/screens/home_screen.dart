@@ -22,7 +22,7 @@ class HomeScreen extends StatelessWidget {
                 child: Center(child: Image.asset(Assets.logo)),
               ),
             ),
-            CustomButton(title: "Continue", buttonStyleType: ButtonStyleType.green, onTap: () {  },),
+            CustomButton(title: "Play Game!", buttonStyleType: ButtonStyleType.green, onTap: () {  },),
             SizedBox(height: 50),
           ],
         ),
