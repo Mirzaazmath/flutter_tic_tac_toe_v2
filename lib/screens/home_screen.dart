@@ -25,7 +25,7 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             CustomButton(title: "Play Game!", buttonStyleType: ButtonStyleType.green, onTap: () {
-              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>ScanPlayerScreen()));
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ScanPlayerScreen()));
             },),
             SizedBox(height: 50),
           ],

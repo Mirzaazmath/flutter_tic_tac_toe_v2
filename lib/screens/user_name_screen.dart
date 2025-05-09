@@ -42,7 +42,7 @@ class _UserNameScreenState extends State<UserNameScreen> {
                 ),
               )),
           CustomButton(title: "Continue", buttonStyleType: ButtonStyleType.purple, onTap: () {
-            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>HomeScreen()));
+            Navigator.of(context).push(MaterialPageRoute(builder: (context)=>HomeScreen()));
           },),
           SizedBox(height: 50,)
         ]),
