@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../core/assets.dart';
+import '../core/constants/enums.dart';
 import '../widgets/background_widget.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/custom_chip_widget.dart';

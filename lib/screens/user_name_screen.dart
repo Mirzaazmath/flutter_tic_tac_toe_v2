@@ -3,6 +3,7 @@ import 'package:flutter_tic_tac_toe/widgets/background_widget.dart';
 import 'package:flutter_tic_tac_toe/widgets/custom_button.dart';
 import 'package:flutter_tic_tac_toe/widgets/custom_chip_widget.dart';
 
+import '../core/constants/enums.dart';
 import '../widgets/custom_textfeild.dart';
 
 class UserNameScreen extends StatefulWidget {

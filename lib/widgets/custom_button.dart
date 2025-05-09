@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nice_buttons/nice_buttons.dart';
 
+import '../core/constants/enums.dart';
+
 
 class CustomButton extends StatelessWidget {
   final String title;
@@ -53,4 +55,3 @@ class CustomButton extends StatelessWidget {
     );
   }
 }
-enum ButtonStyleType {green, purple}

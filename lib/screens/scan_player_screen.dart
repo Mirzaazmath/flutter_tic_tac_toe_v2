@@ -1,6 +1,7 @@
 import 'package:device_scan_animation/device_scan_animation.dart';
 import 'package:flutter/material.dart';
 
+import '../core/constants/enums.dart';
 import '../widgets/background_widget.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/custom_chip_widget.dart';

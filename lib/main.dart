@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // 37:39
+    // 01:00
     return MaterialApp(
       theme: ThemeData(
         fontFamily: 'Digitalt'
