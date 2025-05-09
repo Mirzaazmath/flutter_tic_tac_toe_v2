@@ -4,7 +4,10 @@ import 'package:flutter_tic_tac_toe/screens/scan_player_screen.dart';
 import 'package:flutter_tic_tac_toe/screens/splash_screen.dart';
 import 'package:flutter_tic_tac_toe/screens/tic_tac_toe_screen.dart';
 import 'package:flutter_tic_tac_toe/screens/user_name_screen.dart';
-void main(){
+
+import 'core/local_db.dart';
+void main() async {
+  await LocalDB.initialize();
   runApp(MyApp());
 }
 class MyApp extends StatelessWidget {

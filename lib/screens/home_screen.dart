@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tic_tac_toe/core/local_db.dart';
 import 'package:flutter_tic_tac_toe/screens/scan_player_screen.dart';
 
 import '../core/assets.dart';
@@ -16,7 +17,7 @@ class HomeScreen extends StatelessWidget {
       child: SafeArea(
         child: Column(
           children: [
-            CustomChipWidget(title: "WELCOME BACK MIRZA"),
+            CustomChipWidget(title: "WELCOME BACK ${LocalDB.userName}"),
             Expanded(
               flex: 3,
               child: Padding(

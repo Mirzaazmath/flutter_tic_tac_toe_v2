@@ -16,7 +16,7 @@ class UserNameScreen extends StatefulWidget {
 }
 
 class _UserNameScreenState extends State<UserNameScreen> {
-  TextEditingController _controller = TextEditingController();
+  final TextEditingController _controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return BackgroundWidget(
