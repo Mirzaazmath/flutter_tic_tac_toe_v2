@@ -5,6 +5,7 @@ import 'package:flutter_tic_tac_toe/widgets/custom_chip_widget.dart';
 
 import '../core/constants/enums.dart';
 import '../widgets/custom_textfeild.dart';
+import 'home_screen.dart';
 
 class UserNameScreen extends StatefulWidget {
   const UserNameScreen({super.key});
@@ -40,7 +41,9 @@ class _UserNameScreenState extends State<UserNameScreen> {
                   ),
                 ),
               )),
-          CustomButton(title: "Continue", buttonStyleType: ButtonStyleType.purple, onTap: () {  },),
+          CustomButton(title: "Continue", buttonStyleType: ButtonStyleType.purple, onTap: () {
+            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>HomeScreen()));
+          },),
           SizedBox(height: 50,)
         ]),
       ),
