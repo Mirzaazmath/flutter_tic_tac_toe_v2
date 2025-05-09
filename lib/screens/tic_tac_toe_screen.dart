@@ -24,8 +24,15 @@ class _TicTacToeScreenState extends State<TicTacToeScreen> {
               child:
               Padding(
                 padding: const EdgeInsets.all(20),
-                child: Text(gameState.formattedStatus(player),style: TextStyle(fontSize: 25,color: Colors.white),),
-              ),
+                child: Text(
+                  gameState.formattedStatus(player),
+                  style: Theme.of(context).textTheme.displayMedium?.copyWith(
+                      color: gameState.formattedStatusColor(player),
+                      shadows: [
+                        const BoxShadow(color: Colors.black38, blurRadius: 8)
+                      ]),
+                ),),
+
             ),
             Expanded(
               child: GameBoardWidget(
