@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tic_tac_toe/screens/scan_player_screen.dart';
 
 import '../core/assets.dart';
 import '../core/constants/enums.dart';
@@ -23,7 +24,9 @@ class HomeScreen extends StatelessWidget {
                 child: Center(child: Image.asset(Assets.logo)),
               ),
             ),
-            CustomButton(title: "Play Game!", buttonStyleType: ButtonStyleType.green, onTap: () {  },),
+            CustomButton(title: "Play Game!", buttonStyleType: ButtonStyleType.green, onTap: () {
+              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>ScanPlayerScreen()));
+            },),
             SizedBox(height: 50),
           ],
         ),
