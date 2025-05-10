@@ -4,6 +4,7 @@ import 'package:flutter_tic_tac_toe/screens/scan_player_screen.dart';
 import 'package:flutter_tic_tac_toe/screens/splash_screen.dart';
 import 'package:flutter_tic_tac_toe/screens/tic_tac_toe_screen.dart';
 import 'package:flutter_tic_tac_toe/screens/user_name_screen.dart';
+import 'package:get/get.dart';
 
 import 'core/local_db.dart';
 void main() async {
@@ -15,8 +16,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // 01:00
-    return MaterialApp(
+
+    return GetMaterialApp(
       theme: ThemeData(
         fontFamily: 'Digitalt'
       ),

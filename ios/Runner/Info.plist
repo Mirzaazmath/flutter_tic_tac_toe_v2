@@ -45,5 +45,13 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>NSBonjourServices</key>
+        <array>
+            <string>_{YOUR_SERVICE_TYPE}._tcp</string>
+        </array>
+        <key>UIRequiresPersistentWiFi</key>
+        <true/>
+        <key>NSBluetoothAlwaysUsageDescription</key>
+        <string>Your App need this permission to work</string>
 </dict>
 </plist>

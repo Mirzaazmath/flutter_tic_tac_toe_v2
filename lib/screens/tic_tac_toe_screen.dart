@@ -1,53 +1,59 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tic_tac_toe/core/constants/enums.dart';
-import 'package:flutter_tic_tac_toe/core/models/game_state.dart';
-import 'package:flutter_tic_tac_toe/widgets/background_widget.dart';
 import 'package:flutter_tic_tac_toe/widgets/game_board_widget.dart';
+import 'package:get/get.dart';
+
+import '../core/constants/enums.dart';
+import '../core/models/game_state.dart';
+import '../core/p2p_manager.dart';
+import '../widgets/background_widget.dart';
+
 
 class TicTacToeScreen extends StatefulWidget {
-  const TicTacToeScreen({super.key});
+  final P2pManager p2pManager;
+
+  const TicTacToeScreen({super.key, required this.p2pManager});
 
   @override
   State<TicTacToeScreen> createState() => _TicTacToeScreenState();
 }
 
 class _TicTacToeScreenState extends State<TicTacToeScreen> {
-  GameState gameState = GameState();
-  Player player = Player.p1;
+  Player get player => widget.p2pManager.player;
+
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
     return BackgroundWidget(
-      child: SafeArea(
-        child: Column(
-          children: [
-            Center(
-              child:
-              Padding(
-                padding: const EdgeInsets.all(20),
-                child: Text(
-                  gameState.formattedStatus(player),
-                  style: Theme.of(context).textTheme.displayMedium?.copyWith(
-                      color: gameState.formattedStatusColor(player),
-                      shadows: [
-                        const BoxShadow(color: Colors.black38, blurRadius: 8)
-                      ]),
-                ),),
-
-            ),
-            Expanded(
-              child: GameBoardWidget(
-                gameState: gameState,
-                player: player,
-                onSquareClicked: (index) {
-                  gameState.claimField(index);
-                  setState(() {});
-                },
-              ),
-            ),
-            
-          ],
-        ),
-      ),
-    );
+        child: SafeArea(
+          child: Obx(() {
+            final gameState = Get.find<GameState>();
+            print(gameState.status);
+            return Column(
+              children: [
+                Expanded(
+                  child: Center(
+                    child: Text(
+                      gameState.formattedStatus(player),
+                      style: textTheme.displayMedium?.copyWith(
+                          color: gameState.formattedStatusColor(player),
+                          shadows: [
+                            const BoxShadow(color: Colors.black38, blurRadius: 8)
+                          ]),
+                    ),
+                  ),
+                ),
+                GameBoardWidget(
+                    gameState: gameState,
+                    player: player,
+                    onSquareClicked: (index) {
+                      gameState.claimField(index);
+                      widget.p2pManager.sendGameState(gameState);
+                    }),
+                const Spacer()
+              ],
+            );
+          }
+          ),
+        ));
   }
 }
